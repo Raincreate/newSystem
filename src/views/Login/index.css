@@ -1,0 +1,23 @@
+.formContainer{
+    position: fixed;
+    background-color: rgba(163, 37, 37, 0.8);
+    width: 500px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px; 
+}
+
+.LoginTitle{
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    font-size: 30px;
+    color: aliceblue;
+}
+
+.div_form{
+    margin-top: -0px;
+    margin-left: -150px; 
+}

@@ -1,0 +1,742 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Rain",
+      "password": 123456,
+      "roleState": true,
+      "default": true,
+      "region": "",
+      "roleId": 1
+    },
+    {
+      "username": "张三",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "香港",
+      "roleId": 2,
+      "id": 2
+    },
+    {
+      "username": "李建强",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "深圳",
+      "roleId": 2,
+      "id": 3
+    },
+    {
+      "username": "张华强",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "上海",
+      "roleId": 2,
+      "id": 4
+    },
+    {
+      "username": "tom",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "深圳",
+      "roleId": 3,
+      "id": 5
+    },
+    {
+      "username": "张烨",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "重庆",
+      "roleId": 3,
+      "id": 6
+    },
+    {
+      "username": "jerry",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "广州",
+      "roleId": 3,
+      "id": 7
+    },
+    {
+      "username": "lucky",
+      "password": "123",
+      "roleState": true,
+      "default": false,
+      "region": "西安",
+      "roleId": 3,
+      "id": 8
+    },
+    {
+      "username": "张三分",
+      "password": "123",
+      "region": "北京",
+      "roleId": 4,
+      "roleState": true,
+      "default": false,
+      "id": 9
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "roleName": "系统管理员",
+      "roleType": 1,
+      "rights": [
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/audit-manage",
+        "/audit-manage/audit",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset",
+        "/home",
+        "/right-manage",
+        "/right-manage/role/list",
+        "/right-manage/right/list",
+        "/right-manage/role/update",
+        "/right-manage/role/delete",
+        "/right-manage/right/update",
+        "/right-manage/right/delete",
+        "/user-manage",
+        "/user-manage/add",
+        "/user-manage/delete",
+        "/user-manage/update",
+        "/user-manage/list"
+      ]
+    },
+    {
+      "id": 2,
+      "roleName": "城市管理员",
+      "roleType": 2,
+      "rights": [
+        "/home",
+        "/user-manage",
+        "/user-manage/add",
+        "/user-manage/delete",
+        "/user-manage/update",
+        "/user-manage/list",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/audit-manage",
+        "/audit-manage/audit",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset"
+      ]
+    },
+    {
+      "id": 3,
+      "roleName": "城市编辑",
+      "roleType": 3,
+      "rights": [
+        "/home",
+        "/news-manage",
+        "/news-manage/list",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/preview/:id",
+        "/news-manage/draft",
+        "/audit-manage",
+        "/audit-manage/list",
+        "/publish-manage",
+        "/publish-manage/unpublished",
+        "/publish-manage/published",
+        "/publish-manage/sunset"
+      ]
+    },
+    {
+      "id": 4,
+      "roleName": "报社编辑",
+      "roleType": 4,
+      "rights": [
+        "/home",
+        "/news-manage/add",
+        "/news-manage/update/:id",
+        "/news-manage/draft",
+        "/audit-manage/list",
+        "/audit-manage/audit",
+        "/audit-manage",
+        "/news-manage/list",
+        "/news-manage/preview/:id",
+        "/news-manage"
+      ]
+    }
+  ],
+  "children": [
+    {
+      "id": 3,
+      "title": "添加用户",
+      "rightId": 2,
+      "key": "/user-manage/add",
+      "grade": 2
+    },
+    {
+      "id": 4,
+      "title": "删除用户",
+      "rightId": 2,
+      "key": "/user-manage/delete",
+      "grade": 2
+    },
+    {
+      "id": 5,
+      "title": "修改用户",
+      "rightId": 2,
+      "key": "/user-manage/update",
+      "grade": 2
+    },
+    {
+      "id": 6,
+      "title": "用户列表",
+      "rightId": 2,
+      "key": "/user-manage/list",
+      "pagepermisson": true,
+      "grade": 2
+    },
+    {
+      "id": 8,
+      "title": "角色列表",
+      "rightId": 7,
+      "key": "/right-manage/role/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 9,
+      "title": "权限列表",
+      "rightId": 7,
+      "key": "/right-manage/right/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 10,
+      "title": "修改角色",
+      "rightId": 7,
+      "key": "/right-manage/role/update",
+      "grade": 2
+    },
+    {
+      "id": 11,
+      "title": "删除角色",
+      "rightId": 7,
+      "key": "/right-manage/role/delete",
+      "grade": 2
+    },
+    {
+      "id": 12,
+      "title": "修改权限",
+      "rightId": 7,
+      "key": "/right-manage/right/update",
+      "grade": 2
+    },
+    {
+      "id": 13,
+      "title": "删除权限",
+      "rightId": 7,
+      "key": "/right-manage/right/delete",
+      "grade": 2
+    },
+    {
+      "id": 15,
+      "title": "新闻列表",
+      "rightId": 14,
+      "key": "/news-manage/list",
+      "grade": 2
+    },
+    {
+      "id": 16,
+      "title": "撰写新闻",
+      "rightId": 14,
+      "key": "/news-manage/add",
+      "grade": 2,
+      "pagepermisson": 1
+    },
+    {
+      "id": 17,
+      "title": "新闻更新",
+      "rightId": 14,
+      "key": "/news-manage/update/:id",
+      "grade": 2,
+      "routepermisson": 1
+    },
+    {
+      "id": 18,
+      "title": "新闻预览",
+      "rightId": 14,
+      "key": "/news-manage/preview/:id",
+      "grade": 2,
+      "routepermisson": 1
+    },
+    {
+      "id": 19,
+      "title": "草稿箱",
+      "rightId": 14,
+      "key": "/news-manage/draft",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 22,
+      "title": "审核新闻",
+      "rightId": 21,
+      "key": "/audit-manage/audit",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 23,
+      "title": "审核列表",
+      "rightId": 21,
+      "key": "/audit-manage/list",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 25,
+      "title": "待发布",
+      "rightId": 24,
+      "key": "/publish-manage/unpublished",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 26,
+      "title": "已发布",
+      "rightId": 24,
+      "key": "/publish-manage/published",
+      "pagepermisson": 1,
+      "grade": 2
+    },
+    {
+      "id": 27,
+      "title": "已下线",
+      "rightId": 24,
+      "key": "/publish-manage/sunset",
+      "pagepermisson": 1,
+      "grade": 2
+    }
+  ],
+  "rights": [
+    {
+      "id": 1,
+      "title": "首页",
+      "key": "/home",
+      "pagepermisson": true,
+      "grade": 1
+    },
+    {
+      "id": 2,
+      "title": "用户管理",
+      "key": "/user-manage",
+      "pagepermisson": true,
+      "grade": 1
+    },
+    {
+      "id": 7,
+      "title": "权限管理",
+      "key": "/right-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 14,
+      "title": "新闻管理",
+      "key": "/news-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 21,
+      "title": "审核管理",
+      "key": "/audit-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    },
+    {
+      "id": 24,
+      "title": "发布管理",
+      "key": "/publish-manage",
+      "pagepermisson": 1,
+      "grade": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "时事新闻",
+      "value": "时事新闻"
+    },
+    {
+      "id": 2,
+      "title": "全国经济",
+      "value": "全国经济"
+    },
+    {
+      "id": 3,
+      "title": "科学技术",
+      "value": "科学技术"
+    },
+    {
+      "id": 4,
+      "title": "军事世界",
+      "value": "军事世界"
+    },
+    {
+      "id": 5,
+      "title": "体育",
+      "value": "体育"
+    },
+    {
+      "id": 6,
+      "title": "生活理财",
+      "value": "生活理财"
+    },
+    {
+      "id": 7,
+      "title": "学习",
+      "value": "学习"
+    }
+  ],
+  "regions": [
+    {
+      "id": 1,
+      "title": "北京",
+      "value": "北京"
+    },
+    {
+      "id": 2,
+      "title": "上海",
+      "value": "上海"
+    },
+    {
+      "id": 3,
+      "title": "深圳",
+      "value": "深圳"
+    },
+    {
+      "id": 4,
+      "title": "香港",
+      "value": "香港"
+    },
+    {
+      "id": 5,
+      "title": "成都",
+      "value": "成都"
+    },
+    {
+      "id": 6,
+      "title": "武汉",
+      "value": "武汉"
+    },
+    {
+      "id": 7,
+      "title": "广州",
+      "value": "广州"
+    },
+    {
+      "id": 8,
+      "title": "杭州",
+      "value": "杭州"
+    },
+    {
+      "id": 9,
+      "title": "重庆",
+      "value": "重庆"
+    },
+    {
+      "id": 7,
+      "title": "西安",
+      "value": "西安"
+    }
+  ],
+  "news": [
+    {
+      "title": "31省区市新增确诊病例1437例 其中本土病例1337例",
+      "categoryId": "2",
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">3月13日0—24时，31个省（自治区、直辖市）和新疆生产建设兵团报告新增确诊病例1437例。其中境外输入病例100例（广东42例，上海16例，浙江9例，广西8例，四川8例，天津5例，山东4例，北京3例，江苏1例，福建1例，河南1例，云南1例，甘肃1例），含21例由无症状感染者转为确诊病例（浙江8例，广东6例，四川6例，河南1例）；本土病例1337例（吉林895例，其中吉林市453例、长春市430例、四平市7例、延边朝鲜族自治州4例、松原市1例；山东92例，其中青岛市68例、德州市13例、淄博市7例、滨州市2例、威海市1例、烟台市1例；广东79例，其中深圳市75例、东莞市2例、广州市1例、中山市1例；陕西60例，其中宝鸡市45例、西安市14例、汉中市1例；河北51例，其中廊坊市30例、沧州市19例、邢台市2例；上海41例，其中闵行区9例、浦东新区7例、静安区6例、嘉定区5例、徐汇区4例、黄浦区3例、青浦区2例、长宁区1例、虹口区1例、金山区1例、松江区1例、奉贤区1例；天津40例，其中武清区16例、南开区6例、河西区5例、滨海新区4例、津南区3例、红桥区2例、西青区2例、北辰区2例；江苏16例，其中连云港市12例、常州市3例、宿迁市1例；甘肃12例，其中兰州市8例、兰州新区4例；福建10例，均在泉州市；辽宁9例，其中营口市5例、铁岭市2例、沈阳市1例、盘锦市1例；黑龙江7例，均在哈尔滨市；北京6例，其中朝阳区3例、海淀区2例、顺义区1例；浙江6例，其中杭州市4例、嘉兴市1例、衢州市1例；重庆6例，均在沙坪坝区；云南4例，其中德宏傣族景颇族自治州3例、红河哈尼族彝族自治州1例；广西3例，均在钦州市），含77例由无症状感染者转为确诊病例（吉林41例，山东26例，陕西4例，天津2例，上海2例，江苏1例，广东1例）。无新增死亡病例。新增疑似病例1例，为境外输入病例（在上海）。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　当日新增治愈出院病例135例，解除医学观察的密切接触者8222人，重症病例较前一日增加2例。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　境外输入现有确诊病例2610例（其中重症病例2例），现有疑似病例5例。累计确诊病例16337例，累计治愈出院病例13727例，无死亡病例。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　截至3月13日24时，据31个省（自治区、直辖市）和新疆生产建设兵团报告，现有确诊病例8531例（核减1例）（其中重症病例8例），累计治愈出院病例103735例，累计死亡病例4636例，累计报告确诊病例116902例（核减1例），现有疑似病例5例。累计追踪到密切接触者1813869人，尚在医学观察的密切接触者161403人。</span>&nbsp;</p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">31个省（自治区、直辖市）和新疆生产建设兵团报告新增无症状感染者906例，其中境外输入118例，本土788例（河北162例，其中廊坊市145例、沧州市13例、邢台市4例；广东151例，其中东莞市140例、深圳市11例；吉林131例，其中吉林市120例、长春市3例、四平市3例、梅河口市2例、白山市1例、松原市1例、延边朝鲜族自治州1例；上海128例，其中浦东新区34例、闵行区21例、徐汇区14例、嘉定区14例、黄浦区9例、松江区7例、普陀区6例、金山区6例、静安区4例、虹口区3例、杨浦区3例、宝山区3例、青浦区2例、长宁区1例、奉贤区1例；山东97例，其中威海市35例、青岛市32例、淄博市14例、德州市8例、潍坊市5例、烟台市3例；云南35例，其中红河哈尼族彝族自治州20例、德宏傣族景颇族自治州13例、昆明市1例、临沧市1例；江苏23例，其中连云港市16例、苏州市3例、南京市2例、常州市1例、泰州市1例；甘肃15例，其中兰州新区9例、兰州市4例、白银市2例；广西14例，其中崇左市10例、防城港市3例、柳州市1例；天津12例，其中西青区4例、武清区4例、红桥区2例、河西区1例、南开区1例；黑龙江10例，其中哈尔滨市8例、牡丹江市2例；江西4例，其中南昌市2例、赣州市1例、上饶市1例；北京2例，均在海淀区；浙江2例，均在杭州市；安徽1例，在滁州市；重庆1例，在沙坪坝区）；当日转为确诊病例98例（境外输入21例）；当日解除医学观察56例（境外输入34例）；尚在医学观察的无症状感染者7039例（境外输入1549例）。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　累计收到港澳台地区通报确诊病例280757例。其中，香港特别行政区259387例（出院27943例，死亡3993例），澳门特别行政区82例（出院79例），台湾地区21288例（出院13742例，死亡853例）。</span>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 1,
+      "createTime": 1647326150127,
+      "star": 0,
+      "view": 0,
+      "publishTime": 0,
+      "id": 1
+    },
+    {
+      "title": "运行50天接诊761人次，冬奥诊所里最“火”的是这个科",
+      "categoryId": "5",
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">“冬奥会、冬残奥会虽然结束了，但我们希望通过高效、安全、温暖的医疗服务，将一份有温度的回忆留在各国运动员、工作人员的心中。”北京冬（残）奥村综合诊所医疗官洪韬说。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　伴随着北京2022年冬残奥会闭幕式的落幕，北京冬（残）奥村综合诊所也即将“收官”。1月23日至3月13日，诊所已运行了50天，接诊患者761人次，这个冬奥会、冬残奥会规模最大、服务时间最长、接待就诊人数最多的医疗保障团队，以“两个零”（零投诉零感染）的好成绩，向世界展现着中国医疗服务的水平。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　“设备先进、团队优秀、人力充沛，这不是诊所，简直是个医院。”国际奥委会医疗和科学委员会主席理查德·巴吉特曾这样称赞北京冬（残）奥村综合诊所。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　的确，在这个诊所里，宣武医院、北京中医医院、北京博爱医院、北大口腔医院、北京妇产医院、北京安贞医院和北京急救中心派出的7支精英队伍高度融合，形成了能够展现国家水平的医疗保障“北京队”。诊所内设急诊、内科、外科、口腔、康复、中医、心理等十余个科室，能够满足各国运动员、工作人员多元化的医疗需求。1月23日正式开诊以来，诊所每日24小时连续运转，医疗服务保障从不“打烊”，持续向世界传递中国医生的温度。</span>&nbsp;</p>\n<p></p>\n<img src=\"https://n.sinaimg.cn/sinakd20220314s/194/w568h426/20220314/8d35-63aef1cb50845058fcf823db74ae48c1.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">“诊所里最‘火’的要数康复、口腔、中医等科室。尤其是中医科，简直是冬奥村热门‘打卡胜地’。”洪韬介绍，中医科在冬奥会、冬残奥会期间持续为运动员和随队官员提供针灸、推拿等治疗和贴心的医疗服务。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　3月10日，来自格鲁吉亚的冬残奥会运动员因肩部不适以及下背痛来到诊所就诊。中医科医生李博对其进行肩颈放松、背部摩法、胸椎提抖等传统推拿按摩，以疏通经络、缓解疼痛。经过半个小时的治疗，运动员肩、背部的疼痛和痉挛得到了大半缓解。“太神奇了，谢谢中国医生！”运动员开心地鼓掌，为中医科团队点赞。“也谢谢您对中医的认可，祝您取得好成绩！”李博微笑着回答，温暖在诊室里传递。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　洪韬介绍，北京冬（残）奥村综合诊所还将继续运行至3月16日北京冬残奥村闭村，“虽然医疗保障任务即将圆满‘收官’，但这份有温度的冬奥记忆，永不褪色。”</span>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 3,
+      "createTime": 1647326306046,
+      "star": 0,
+      "view": 0,
+      "publishTime": 1647327334872,
+      "id": 2
+    },
+    {
+      "title": "北京今日最高气温逼近20度 明后天气温将明显下降",
+      "categoryId": "6",
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">北京今天白天晴间多云，北部有轻度浮尘，北转南风二三级，最高气温19℃；夜间晴转多云，南转北风一二级，最低气温5℃。今天以晴为主，昼夜温差大，注意调整着装，北部地区适当防护；明天夜间至后天白天有雨雪，气温开始明显下降，请注意添衣保暖和交通安全。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\"><strong>北京河南等多地有扬沙或浮尘</strong></span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　受冷空气大风影响，预计15日白天，新疆东部和南疆盆地、内蒙古中西部、甘肃北部、宁夏北部、陕西中北部、山西、河北北部、北京北部、河南、安徽北部、湖北北部等地的部分地区有扬沙或浮尘天气，其中内蒙古西部偏北地区局地有沙尘暴。</span><br>&nbsp;</p>\n<img src=\"https://n.sinaimg.cn/spider20220315/304/w600h504/20220315/8b32-f2b90867dfb33929ddd6548b0991aa82.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\"><strong>浮沉天气防御指南：</strong></span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　1。做好防风防沙准备，及时关闭门窗；</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　2。注意携带口罩，纱巾等防尘用品，以免沙尘对眼睛和呼吸道造成损伤；做好精密仪器的密封工作；</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　3。把围板、棚架、临时搭建物等易被风吹动的搭建物固紧， 妥善安置易受沙尘暴影响的室外物品；</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　4。由于能见度较低，驾驶人员应控制速度，确保安全。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\"><strong>今年春来早 这些地区偏早20多天</strong></span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　连日来，全国气温不断走高，春天的脚步越来越快。目前，有不少地方已经入春了。气象部门监测数据显示，今年春天来得早，有些地区入春时间普遍比常年偏早5到20天，山东、河南、江苏等省份部分地区入春时间偏早20天以上。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">　　气象部门监测数据显示，截至3月9日，除了华南大部及云南南部的无冬区，黄淮地区西部、江淮以南大部及贵州、重庆南部、四川东部、云南北部等地已经入春。气象部门预计，3月中旬，大部地区平均气温将较常年同期偏高2—4℃，其中宁夏、内蒙古中部、陕西、山西、河南及长江中下游部分地区偏高5℃以上。</span><br>&nbsp;</p>\n<img src=\"https://n.sinaimg.cn/news/crawl/161/w550h411/20220315/28f9-cfec7ec030ef919b6f82f0ec5bec94ef.png\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p></p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647326395983,
+      "star": 20,
+      "view": 235,
+      "publishTime": 0,
+      "id": 3
+    },
+    {
+      "title": "如何进入大厂？都需要做一些什么准备",
+      "categoryId": "7",
+      "content": "<p><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", \"Noto Sans CJK SC\", \"WenQuanYi Micro Hei\", sans-serif;\">鹅厂、猫厂、猪厂、狗厂（分别指腾讯、阿里巴巴、网易、京东），都有一个统一的名字——互联网大厂。互联网大厂，是个让许多应届毕业生（甚至工作多年的职场人）向往的企业。</span>&nbsp;</p>\n<p>希望在秋招的时候能够进入大厂去工作，996.</p>\n<h1 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 20px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\"><strong>1、简历是成功的一半！</strong></span></h1>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\"><strong>简历的重要程度在面试过程中占到50%</strong>，把简历写好也是一个技术活，就和你写晋升ppt一样，很多程序员上班摸鱼划水，最后周报和晋升答辩还能写出花来，你仔细想想这其中的套路？</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\">格式排版没那么重要，讲清楚你干了啥，<strong>按照STAR原则来，把它当做一次你的上份工作经历的晋升答辩来对待</strong>，项目成果一定要量化！量化！量化！简历筛选就1分钟不到，把重要的东西强调出来！</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\">看看“浮夸”的大厂员工的建议，虽然有戏谑成分，但其实真的是反映了一个常态</span>&nbsp;</p>\n<h1 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 20px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\"><strong>2、面试能力和技术能力一样重要！</strong></span></h1>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\">很多职场老油条在面试这一环节上，绝对是跑得比其他人快的，因为这当中就是有套路！他们熟悉各大厂面试官面试的流程，大同小异其实，甚至把问的题目都摸得差不多了。所以很多应届生在校招之前可以多问问你们的学长学姐，了解你想去的公司的面试套路，不要打没准备的仗！</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\">面试时很多坑，如果不做好足够的准备，你不被面试官坑也会被HR坑！毕竟短短的1个小时左右面试，看不出来太多。</span>&nbsp;</p>\n<h1 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 20px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\"><strong>3、进入和大厂对标业务的小厂，曲线救国！</strong></span></h1>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\"><strong>现在大环境不好，大厂更加难进，但小厂你就得搞清楚它的核心业务是什么</strong>，比如要么进C端垂直领域里前几名的小厂，要么进深耕B端的稳了很多年的小厂，因为很多大厂在细分领域里后续要加大投入，一旦你是这个领域里的头部，大厂一开始涉足这个领域，你的机会就来了！比如</span><a href=\"https://cloud.tencent.com/solution/education?from=10680\" target=\"_blank\"><span style=\"color: rgb(0,164,255);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\">在线教育</span></a><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\">，就非常典型。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\">小厂也有它的优点，在小厂更容易有机会，大厂很多都是螺丝钉，我身边很多人都是在小厂干出了不错的成绩后来进大厂的。时间会证明一切！</span></p>\n<h1 style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 20px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\"><strong>4、从大厂的边缘部门进入！</strong></span></h1>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\"><strong>其实大厂并没有很难进，难进的是大厂的核心业务</strong>，两者对人才要求肯定是不一样的。这就和你当初选择大学一样，是进好的大学的边缘专业还是选择一般大学的重点专业？</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\">这里只说一点，社会发展速度太快了，现在你看到的核心和重点，或许在三五年之后会变成边缘，同样地，现在的边缘将来很可能就成为了核心。毕竟现在一个互联网创业公司的生存时间已经短到了2年，谁能确定未来呢？</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\">从大厂的边缘业务切入，后面抓住机会转核心，未必不是一个好选择。先拿到船票再说！</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 14px;font-family: pingfang SC\", \"helvetica neue\", arial, \"hiragino sans gb\", \"microsoft yahei ui\", \"microsoft yahei\", simsun, sans-serif;\">最后，其实这些只是技巧，都是身边的例子，重要的还是个人能力，其实进不进大厂每个人观点不同，没进大厂一样可以发展得很好。</span>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647326857509,
+      "star": 238,
+      "view": 1349,
+      "publishTime": 0,
+      "id": 4
+    },
+    {
+      "title": "进入互联网大厂前端学习路线",
+      "categoryId": "7",
+      "content": "<p><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;\">1. 学习javascript，用的是红色的那个《javascript 高级程序设计》。</span>&nbsp;</p>\n<p></p>\n<img src=\"https://pic2.zhimg.com/80/v2-bac6ad88e1f47ad64958d92e616b48a5_1440w.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;\">简称“红宝书”，这本书你读几遍，会发现面试题中很多问题你都有答案，甚至比网络上面别人贡献出来的答案还要清晰完整。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;\">2. 学习网络相关知识，用的是封面有一只松鼠的《HTTP权威指南》，同样，在里面，你也可以找到比网上更详细的关于网络方面的面试题答案。</span>&nbsp;</p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;\">3. 算法。如果时间充足，建议把leetcode里面的简单和中等的题目都刷一遍，这里附上中文版的leetcode官网链接:</span></p>\n<p style=\"text-align:start;\"><a href=\"https://link.zhihu.com/?target=https%3A//leetcode-cn.com/problemset/all\" target=\"_blank\"><span style=\"color: inherit;background-color: rgb(255,255,255);font-size: 0px;font-family: a;\">https://</span><span style=\"color: inherit;background-color: rgb(255,255,255);font-size: medium;\">leetcode-cn.com/problem</span><span style=\"color: inherit;background-color: rgb(255,255,255);font-size: 0px;font-family: a;\">set/all</span></a></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;\">如果时间不够，起码要把剑指offer上面的题目刷几遍:</span></p>\n<p style=\"text-align:start;\"><a href=\"https://link.zhihu.com/?target=https%3A//www.nowcoder.com/ta/coding-interviews\" target=\"_blank\"><span style=\"color: inherit;background-color: rgb(255,255,255);font-size: 0px;font-family: a;\">https://www.</span><span style=\"color: inherit;background-color: rgb(255,255,255);font-size: medium;\">nowcoder.com/ta/coding-</span><span style=\"color: inherit;background-color: rgb(255,255,255);font-size: 0px;font-family: a;\">interviews</span></a></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;\">可直接在牛客网上面刷题，当然也可以买《剑指offer》这本书配合起来看。</span>&nbsp;</p>\n<p style=\"margin-left:0px;\">同时，牛客网上的一些关于前端的算法题目也要会:</p>\n<p style=\"margin-left:0px;\"><a href=\"https://link.zhihu.com/?target=https%3A//www.nowcoder.com/ta/front-end\" target=\"_blank\"><span style=\"color: transparent;background-color: transparent;font-size: 0px;font-family: a;\">https://www.</span><span style=\"color: inherit;\">nowcoder.com/ta/front-e</span><span style=\"color: transparent;background-color: transparent;font-size: 0px;font-family: a;\">nd</span></a></p>\n<p style=\"margin-left:0px;\">这些题目就比较简单了，但是一定要会。</p>\n<p style=\"margin-left:0px;\">4. 面试题。网上各种面经帖子，或者面经汇总，都看看，然后寻找答案。</p>\n<p style=\"margin-left:0px;\">猪学长之前精心整理的优质校招面经合集分享给同学们！</p>\n<p style=\"margin-left:0px;\"><a href=\"https://link.zhihu.com/?target=http%3A//mp.weixin.qq.com/s%3F__biz%3DMzg3NjU5NDM5NQ%3D%3D%26mid%3D100007877%26idx%3D1%26sn%3D9252312865325181d8eb0c81d139a4fa%26chksm%3D4f2e8a7178590367d01fb0dc5f884590a1a3788dc85ae8c6c2753c1ef618748bbebcb34cbbef%23rd\" target=\"_blank\"><span style=\"color: inherit;\">优质大厂校招面经合集免费分享，点这里！</span></a></p>\n<p style=\"margin-left:0px;\">5. 前端技能、知识。前面也说过，像react、vue、redux、webpack、nodejs、express、react router、threejs这些都是现在国内大厂比较常用的技术组件，这些内容的学习直接看官网就行。</p>\n<p style=\"margin-left:0px;\">如果需要将这些知识串起来用，可以网上找找实战教程。我当时学react基础主要用的教程，这里也直接分享给大家：</p>\n<p style=\"margin-left:0px;\">6. 我毕设是大三暑假的时候写的，用的是react+eggjs搭建的一个网站，自己的毕设是用的react+eggjs搭建的。</p>\n<p style=\"margin-left:0px;\">参考书用的一本《react全栈——redux+flux+webpack+babel整合开发》，由于封面是几个脸谱，有人称其为“脸谱书”。</p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;\">7. 准备比较充分的同学，或者说想要拿到高一点级别的offer的同学，自然要理解各种原理了，这方面可以多看各路大神的的帖子，网上一搜也比较多，或者厉害一点的，直接从github上面下载源码看吧。</span>&nbsp;</p>\n<h2 style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: 1.2em;font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", \"Noto Sans CJK SC\", \"WenQuanYi Micro Hei\", sans-serif;\">误区与建议</span></h2>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", \"Noto Sans CJK SC\", \"WenQuanYi Micro Hei\", sans-serif;\">最后总结一下小白前端求职之路上我的思维误区或者建议：</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", \"Noto Sans CJK SC\", \"WenQuanYi Micro Hei\", sans-serif;\">算法要早点重视。大一大二的同学们一定要早早的打下扎实的算法与数据结构基础，早点刷leetcode中的题目。分享一个LeetCode优质的题解小册:</span></p>\n<p style=\"text-align:start;\"><a href=\"https://zhuanlan.zhihu.com/p/353670540\" target=\"_self\"><span style=\"color: inherit;background-color: rgb(255,255,255);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", \"Noto Sans CJK SC\", \"WenQuanYi Micro Hei\", sans-serif;\">精心整理的LeetCode刷题笔记，点这里免费领。</span></a></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", \"Noto Sans CJK SC\", \"WenQuanYi Micro Hei\", sans-serif;\">没有早点出来实习。其实大一大二就可以出来实习的，不用非得纠结一定要大厂去实习，小厂虽然没有名气，但是项目多是比较新，技术栈也比较新，可以学的东西也很多。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", \"Noto Sans CJK SC\", \"WenQuanYi Micro Hei\", sans-serif;\">不应该觉得前端简单并且鄙视前端。教材上面的前端就是简单的html、css和jquery组成，并以为就是这样了。并且存在鄙视链，学后端的鄙视前端的。这2条因素是导致我虽然从大一时就简单学过前端并且对其有兴趣，但是没有立马就想把它作为职业规划的原因，一直拖到了大三，惭愧ing。虽然得承认，后端天花板确实比前端高，但是前端也并不是就是想象中那么简单，前端也很强大。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", \"Noto Sans CJK SC\", \"WenQuanYi Micro Hei\", sans-serif;\">实习、比赛、实验室、博客，能有的话，多多益善。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", \"Noto Sans CJK SC\", \"WenQuanYi Micro Hei\", sans-serif;\">我并不是一个出身名校的校招拿遍所有大厂offer的收割机大佬，甚至我还是一个由于信息差原因醒悟非常晚的同学。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(18,18,18);background-color: rgb(255,255,255);font-size: medium;font-family: -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"PingFang SC\", \"Microsoft YaHei\", \"Source Han Sans SC\", \"Noto Sans CJK SC\", \"WenQuanYi Micro Hei\", sans-serif;\">但是我希望我自己的学习路线能够对正在学习前端的小伙伴有一些帮助，同时更希望大家要以我的经历为教训，一定不要像我从大三快下学期了才开始匆匆准备校招。</span>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647327228959,
+      "star": 213,
+      "view": 1453,
+      "publishTime": 1647327499021,
+      "id": 5
+    },
+    {
+      "title": "潘长江涉嫌虚假宣传卖酒",
+      "categoryId": "1",
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">“我和茅台董事长认识十几年了，昨晚我把他灌醉了，让他签合同给我定价权。”在3月初的一场酒水专场直播中，知名演员潘长江在屏幕前卖力地推销着茅台虎年生肖酒。潘长江一边说着，一边不忘催促观众下单并补充道：“这款茅台虎年生肖酒，酒厂肯定要亏钱的，市场价一直4万多（一箱），我2万多就卖。”“这种酒一年只生产一次，喝一瓶少一瓶，非常有收藏价值！”</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">“现在直播卖酒，都这么没底线了吗？”一位接近茅台的人士告诉《每日经济新闻》记者，所谓潘长江认识茅台董事长十几年、喝酒把他灌醉，基本就是赤裸裸的谎言。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">潘长江，这位在某平台拥有2500多万粉丝的知名演员，自转型网络主播卖酒后争议不断，屡屡踩在“红线”边缘。而像潘长江一样涉嫌虚假宣传的卖酒“网红”主播不在少数，更有甚者已沦为假酒产业链的一环。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">今年2月底，重庆警方宣布破获了一起特大制造、贩卖假茅台的案件，涉案金额约1亿元。相较其他贩假案件，这起案子数额巨大且手法新颖，不法分子为扩大销量，雇佣了“网红”主播推销高仿的茅台。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">高仿的假茅台遇上“网红”，巨大的流量正成为不法分子觊觎的渠道。直播卖酒如何强监管？消费者又当如何避免上当受骗？</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"text-align:center;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\"><strong>直播卖酒水很深一般人把握不住</strong></span>&nbsp;</p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">相较于其他一般制售假酒案件，不久前重庆警方破获的涉案金额1亿元的特大茅台酒制售假茅台案颇具典型意义——这种新型售卖假酒的手法被公之于众。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">根据警方通报，在该假茅台案中共抓获犯罪嫌疑人24名，捣毁4个产、储、销“黑窝点”时，在现场查获高仿茅台800多瓶、待灌装基酒3000多斤、制假设备14台、包材2.7万套。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">而在这起案件中，不法分子为了扩大销量，雇佣了“网红”主播制作识别真假茅台品牌酒的视频内容，并于短视频平台注册多个账号滚动播放，在积聚一定人气后进而推销。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">实际上，在短视频、直播中的卖酒乱象远不止于此。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">2021年3月，潘长江直播卖“黄金酒”遭网友痛批后，近日再度“出山”，3月1日晚间，在直播间进行了一场酒水专场。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">直播现场，桌上摆满了茅台生肖酒，潘长江称：“我和茅台公司董事长认识十几年了，昨晚我把他灌醉了，让他签合同给我定价权”、“这款茅台虎年生肖酒，酒厂肯定要亏钱的，市场价一直4万多（一箱），我2万多就卖”、“大家要相信潘叔，我也不会让你们失望，为了把价格打下来，我自己也在里面垫了一点钱，这价格只有潘叔直播间才有，赶紧下单。”</span>&nbsp;</p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">潘长江的上述言论，遭到了不少白酒行业人士的批评。有接近茅台的人士更是对《每日经济新闻》记者直言“都这么没底线了吗？”而这已不是潘长江首次在“红线”边缘试探了。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">去年潘长江因为直播卖酒，还贡献了一个年度热词——“潘嘎之交”。一次，潘长江在直播中劝说谢孟伟（《小兵张嘎》中嘎子的饰演者）不要再直播卖酒了。他“语重心长”地对谢孟伟说，“网上的东西都是虚拟的，我怕你把握不住啊孩子，因为这里水很深.....”谢孟伟听后，很“诚恳”地表示自己不卖了。后来网友们发现，潘长江自己也去卖酒了，便反过来让谢孟伟去劝劝潘长江。谢孟伟表示：“我真劝不了，你们别让我劝了，我只能把自己管好。”</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">“他（潘长江）这种行为，肯定是在打‘擦边球’，你说他卖假货，那应该不至于，但有涉嫌虚假宣传的嫌疑。一般我们酒企自己的官方直播间，肯定是严格遵守法律法规的要求，肯定不能这样做。”一位白酒企业人士说。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">对于直播卖酒的争议，《每日经济新闻》记者经过尝试，暂无法联系上潘长江获得置评。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">“对直播卖酒的监管，目前确实还存在一些薄弱环节。”白酒专家肖竹青表示。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">实际上，加强对直播带货行业的监管，有关部门已有所动作。此前，国家广电总局发布了《关于加强网络视听电子商务直播节目和广告节目管理的通知》。其中明确指出：网络视听电子商务直播节目和广告节目用语要文明、规范，不得夸大其辞，不得欺诈和误导消费者。</span>&nbsp;</p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">相比潘长江在直播卖酒中打“擦边球”，已有不法分子利用直播卖假酒，甚至是盯上茅台这类昂贵的名酒。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">“实际上，网上卖假的高仿茅台并不是那么简单。首先就是东西要做得能以假乱真。”知名打假人叶光告诉《每日经济新闻》记者。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">就在上述重庆警方查获的假茅台案中，不法分子魏某等人也非常注重制假工艺，在制假过程中采用新设备实现贴标流程自动化运行，使用的防伪芯片仿真度极高。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">根据警方通报，魏某等人从贵州仁怀人范某处购置散装的酱香型白酒基酒，从广东、贵州等地分别购买假冒品牌的商标、手提袋、酒杯盒、防伪识别器等外包装材料以及压盖机、包装机、自动贴标机等设备，在湖北恩施城乡结合部租赁房屋作为厂房，自主勾调、灌装、包装，成批次生产高仿茅台品牌酒。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">“实际上，要想做到以假乱真并不容易。因为每瓶茅台酒酒盖里面都有防伪芯片，通过芯片可以追踪溯源以鉴别真假。而这种芯片都是一次性的，也就是茅台酒正常进行开瓶后，这种芯片就遭破坏，基本不可能被回收。”叶光表示，不法分子能做到防伪芯片仿真度极高，是下了功夫的。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">做到高仿茅台以假乱真只是第一步，在网上卖高仿茅台时还要注意价格不能太低。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">“一般高仿茅台的市场价与真茅台的价格有出入，但不会太多。比如，真飞天茅台的官方定价1499元/瓶，那假茅台酒一般会卖1500元/瓶或者1600元/瓶，因为卖太便宜反而会引起消费者怀疑。”叶光说。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">至于高仿茅台的成本，叶光透露，具体要看造假的奸商是拿什么样的酒来冒充茅台的。“若拿茅台旗下的系列酒，比如茅台王子酒来冒充，那它算是有‘良心’的了。”叶光苦笑着说，因为茅台王子酒的酒质还不错，成本怎么也在上百元/瓶了。“有些不法商人，甚至直接拿几元、十几元的酒来冒充茅台，也不是没有可能”。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">“贩卖假茅台非常暴利，甚至比贩毒还暴利。”叶光称，有些人拿100多元的酒来冒充茅台卖1500元/瓶，利润超过10倍。若是拿几元钱的酒来冒充，利润可以达到上百倍。“这也是为何制假贩假茅台，年年严打，年年都有”。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">根据记者观察，除一些不法分子直播渠道卖假酒外，直播卖酒还有不少乱象。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">首先是傍名酒以次充好。这种往往以“贵州茅台镇酒”、“飞天茅合酒”、“茅台原浆酒”、“陈酿茅台”、“贵州王子酒”等看似名酒的面目示人。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">其次是，把集团的边缘或贴牌酒当核心品牌酒来卖。众所周知，茅台集团、五粮液集团旗下分别有飞天茅台、普五等核心品牌。不过，在核心品牌外，也有一些边缘型的品牌甚至是贴牌酒。而部分卖酒的主播，往往利用这样的信息差偷换概念，把边缘品牌的酒说成核心品牌的酒。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">最后是虚假宣传、乱标价格。比如，在潘长江的直播中，他宣称茅台虎年生肖酒原价是4万多元（一箱）折合6600多元/瓶。实际上，茅台虎年生肖酒的价格颇为透明，市场价在4500元/瓶左右。而潘长江直播中的该酒折合4799元/瓶，即使他卖所谓的“优惠价”依然能从中赚得不少钱。</span> <br>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647333172583,
+      "star": 0,
+      "view": 0,
+      "publishTime": 1647333294417,
+      "id": 6
+    },
+    {
+      "title": "国家统计局：我国一季度经济平稳发展态势能够延续",
+      "categoryId": "2",
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">本文转自：央视网</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 18px;font-family: arial;\">央视网消息：</span><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">今天（3月15日）上午，国家统计局发布1—2月份国民经济运行数据，数据显示1—2月份国民经济运行好于预期。针对当前国际形势复杂、疫情多地散发的情况，国家统计局表示，一季度保持平稳发展的态势仍然能够延续。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">国家统计局介绍，1—2月份，生产需求指标有所回升，工业生产加快，投资明显提升，市场销售继续改善，城镇调查失业率总体稳定。尽管当前国际形势复杂，但国内供给还有很多有利条件。</span>&nbsp;</p>\n<p><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 18px;font-family: arial;\">国家统计局新闻发言人 付凌晖：</span><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">1—2月份的原煤生产产量同比增长了10.3%，发电量增长了4%，比去年12月份有明显改善，这些有利于保障经济的稳定运行。下阶段，随着各地坚持稳字当头、稳中求进，加大对经济的保障力度，外部的影响能够控制在有限的范围内。</span>&nbsp;</p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">针对当前国内疫情多点散发的情况，国家统计局介绍，从全国来看疫情防控形势总体稳定，经济运行保持平稳，对经济影响会逐步得到控制。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 18px;font-family: arial;\">付凌晖：</span><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">因为疫情变化还存在一些不确定性，下阶段对经济的影响还需要观察。总的来看，中国经济韧性足、潜力大、空间大的特点还是比较明显的，保持平稳发展还有很多有利条件。</span>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647333274466,
+      "star": 0,
+      "view": 2,
+      "publishTime": 1647333297676,
+      "id": 7
+    },
+    {
+      "title": "俄乌第四轮谈判遭遇“技术暂停”，全球苦等和平",
+      "categoryId": "4",
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">环球时报驻德国特约记者 萧久 任重 柳玉鹏】乌克兰与俄罗斯会谈遭遇“技术暂停”，“将推迟到周二”——俄乌第四轮谈判当地时间14日以视频方式举行，没想到当晚传出了这一意外消息。与此同时，西方与俄罗斯之间制裁与反制裁的较量已接近白热化：制裁冻结了俄罗斯近一半的黄金和外汇储备，苹果、阿迪达斯等西方公司切断了与俄市场的联系，意大利、德国、法国等趁机扣下俄富豪的私人游艇，而俄财长则宣布将用卢布向债权人支付即将到期的债务。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">事实上，对俄制裁也造成了西方和全球的经济困境，在卢布汇率暴跌50%的同时，美国纳斯达克指数也跌入熊市，欧洲能源价格的飞涨令德国巴伐利亚州唯一的钢铁厂宣告关门。当地时间14日，美国股市开盘不久后反弹，分析人士称，这表示投资者期待此轮俄乌谈判能给世界带来和平的希望。</span>&nbsp;</p>\n<p></p>\n<img src=\"https://img1.utuku.imgcdc.com/650x0/military/20220315/30459eb8-fe3f-499f-8591-a612c6159683.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\"><strong>周一没谈完，周二继续</strong></span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">“艰难的谈判仍在继续。每个人都在等待消息。今晚我们将报告结果，”俄乌第四轮会谈在当地时间14日中午时分开始，乌克兰总统泽连斯基在谈判过程中发出上述消息。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">几乎同时，欧洲委员会议会大会（PACE）发推文称，泽连斯基以“紧急、不可预见的情况”为由，取消了当天向欧洲委员会发表讲话的日程。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">到当地时间14日下午4时左右，媒体突然传出消息称，谈判已经暂停，将于15日继续。美国有线电视新闻网（CNN）引用乌总统办公室主任顾问波多利亚克发出的推文报道称：“谈判进入技术暂停，明天继续。这对于工作小组的额外工作和对个别定义的澄清是必要的。谈判仍在继续。”</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">波多利亚克会前预告称，第四轮谈判将“总结初步结果”。“虽然战事依然在进行，俄罗斯和乌克兰对第三轮谈判给予积极评价，这增加了外交出现进展的希望”，英国《卫报》14日这样评价。泽连斯基13日也在脸书视频讲话中表示，他的团队正在继续与俄罗斯进行外交谈判，以安排他与俄罗斯总统普京会面。</span>&nbsp;</p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">据今日俄罗斯电视台14日报道，美国常务副国务卿舍曼竟称，俄罗斯有准备与乌克兰进行认真谈判的迹象，“这是西方对俄施压的结果”。俄国家杜马议员莫罗佐夫说，美国一面在军事上支持乌克兰，宣布对俄进行经济制裁，一面又试图宣称自己是“维和人员”，试图将谈判中的任何新进展，都归功于自己。他说，实际上，美国并不希望俄乌谈判取得成果。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">据俄新社14日报道，俄国防部发言人科纳申科夫少将14日表示，自俄罗斯开展特别军事行动以来，俄军已摧毁乌克兰3920处军事目标。他同时称，俄军队继续进攻，到达了沃迪亚诺耶、斯拉德科耶、斯捷普诺伊、塔拉姆丘克和斯拉夫诺耶一线，“向前推进了11公里”。俄新社当天还说，克里米亚和顿巴斯之间已经建立了一条“陆地走廊”，这是一条连接克里米亚和马里乌波尔的战略路线，CNN14日称，这将允许克里米亚军队与顿涅茨克的亲俄武装联手，令俄军迅速进入亚速海沿岸的主要港口城市。针对13日俄军空袭了一个靠近波兰边境的乌克兰军事基地，泽连斯基警告：“俄罗斯导弹落入北约领土只是时间问题。”</span>&nbsp;</p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">全球制裁跟踪数据库Castellum3月13日公布的数据显示，自俄乌爆发军事冲突以来，美国和欧洲盟国发起了一系列针对俄罗斯的制裁行动。这使得俄罗斯受制裁项目总数增加至5532项，超过伊朗的3616项。眼下，不少富有的俄罗斯人都在试图将存放于瑞士和英国的资金转移至迪拜，因为这两个国家已经对俄罗斯的个人和机构实施了制裁。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">据法新社14日报道，俄财长西卢安诺夫当天发表声明指责外国希望通过实施前所未有的制裁，迫使俄罗斯“人为违约”。他否认俄罗斯“无法履行其政府债务的义务”，称俄会在付款日按俄罗斯央行的汇率以卢布支付债务。西卢安诺夫称，在当前情况下这是“绝对公平的”，因为俄罗斯的黄金和外汇储备共计约6400亿美元，其中约3000亿美元已被冻结无法使用。</span>&nbsp;</p>\n<img src=\"https://img2.utuku.imgcdc.com/650x0/military/20220315/9d6763e4-c8ef-4ce4-9800-3ba388562660.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">俄总统新闻秘书佩斯科夫14日称财政部有关使用卢布偿还所有外债的说法是“必要声明”，并补充说：“实际上，如果不是（西方）故意所为，违约的那些条件并不存在。”</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(0,0,0);font-size: 18px;font-family: Microsoft YaHei\", \"Hiragino Sans GB\", \"WenQuanYi Micro Hei\", 微软雅黑, 宋体, sans-serif;\">尽管俄驻美大使馆13日驳斥了美国《华尔街日报》关于在俄西方企业的高管可能被拘留、其资产或被没收的报道，有关俄将对美报复的传闻仍然不断。《国会山报》13日称，克里姆林宫的目标是控制外资持股25%或以上的企业，然后把它们拍卖给俄罗斯投资者。莫斯科拒绝归还从西方公司租赁的数百架飞机，这些飞机总价值达100亿美元。俄罗斯议员还在考虑收购福特、通用汽车、大众和丰田等公司拥有的汽车工厂，以及埃克森美孚和英国石油部分拥有的数十亿美元能源项目。但《国会山报》同时称，迄今为止，俄罗斯对西方卷入俄乌军事冲突的反应，“出乎意料地保持克制”：“我们还没有看到对即将到来的对乌援助采取重大报复措施，还没有看到预期中针对北约或美国的大规模网络攻击，也没有看到冲突扩大到乌克兰边境以外。”文章呼吁西方“在援助基辅方面必须非常谨慎”，警告“西方有可能盲目地从有限战争升级为区域冲突或更糟的情况”。</span>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647333450327,
+      "star": 0,
+      "view": 3,
+      "publishTime": 1647333466680,
+      "id": 8
+    },
+    {
+      "title": "中国空间站“天宫课堂”第二次太空授课活动将于近期进行",
+      "categoryId": "3",
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 18px;font-family: PingFangSC-Regular, Helvetica, Arial, \"Microsoft Yahei\", sans-serif;\">据中国载人航天工程办公室消息，中国空间站“天宫课堂”将于近期择机开展第二次太空授课活动。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 18px;font-family: PingFangSC-Regular, Helvetica, Arial, \"Microsoft Yahei\", sans-serif;\">2021年12月9日，“天宫课堂”进行了首次太空授课，“太空教师”翟志刚、王亚平、叶光富与地面课堂师生互动交流。首次太空授课进一步拉近了青少年与载人航天的距离，持续兴起探知航天奥秘、学习航天知识的热潮。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 18px;font-family: PingFangSC-Regular, Helvetica, Arial, \"Microsoft Yahei\", sans-serif;\">首次太空授课后，社会各界通过新闻媒体和网络广泛参与“天宫课堂”授课内容征集活动。第二次太空授课内容，是从征集到的意见建议中广泛遴选的，并结合中国空间站设施条件进行了精心设计。授课活动将全程进行直播。（总台记者 王刚 时宗连）</span>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647333546692,
+      "star": 0,
+      "view": 1,
+      "publishTime": 1647333834499,
+      "id": 9
+    },
+    {
+      "title": "追梦复出库里砍47分6助攻 勇士主场力克奇才",
+      "categoryId": "5",
+      "content": "<p></p>\n<img src=\"https://n.sinaimg.cn/sports/transform/283/w650h433/20220315/d971-0e31d37589dde7a64cc9bb299082c35f.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">北京时间3月15日，勇士坐阵主场迎战奇才。最终勇士以126-112战胜奇才。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　本场比赛中，库里入账47分6篮板6助攻1抢断，普尔拿下20分2篮板3助攻2抢断1盖帽，汤普森砍下20分4篮板1助攻。奇才方面，波尔津吉斯入账25分8篮板4助攻，卡德威尔-波普入账19分2篮板1助攻2抢断，阿夫迪亚斩获13分2篮板4助攻1抢断。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　比赛回顾</span></p>\n<p><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　开场后，第3分42秒，库兹马跳投得手。第6分44秒，库里出现传球失误，被内托抢断。第10分49秒，别利察在加福德投篮时犯规，送给奇才2次罚球机会。勇士打出流畅配合，此节全队共完成11次助攻，其中格林一人就为队友送出3次传球。勇士全队本节投出14粒三分球，命中率50%。奇才本节状态欠佳，失误多达6次。首节战罢，场上比分是33-30，勇士领先3分。</span> <span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">次节回来，第6分51秒，汤普森在波尔津吉斯投篮时犯规，送给奇才2次罚球机会。第8分51秒，接到格林的传球，库里三分远投得手。第9分10秒，基斯珀特手滑丢球，被库里抢断。勇士打出流畅配合，此节全队共完成9次助攻，其中别利察一人就为队友送出2次传球。奇才全队本节投出12粒三分球，但命中率仅为25%。勇士此节手感颇佳，全队投篮命中率达到63.6%，与奇才的40.9%相比更胜一筹，其中库里仅此节得到12分。半场结束，勇士以16分的领先优势进入下一节。</span>&nbsp;</p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">下半场易边再战，第47秒，波尔津吉斯出现传球失误，被库明加抢断。第5分33秒，库明加在库兹马投篮时犯规，送给奇才2次罚球机会。第9分31秒，库里三分远投得手。奇才打出流畅配合，此节全队共完成9次助攻，其中内托一人就为队友送出2次传球。三节打完，勇士以17分的领先优势进入下一节。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　第四节，第2分58秒，普尔抛投命中。第7分26秒，库里三分远投命中。第9分5秒，史密斯在库里投篮时犯规，送给勇士2次罚球机会。勇士全队本节投出13粒三分球，但命中率仅为30.8%。比赛结束，勇士以126-112战胜奇才，锁定胜局。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　双方首发阵容</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　奇才：内托、卡德威尔-波普、库兹马、波尔津吉斯、基斯珀特</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　勇士：普尔、卢尼、汤普森、库里、库明加</span>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647333639758,
+      "star": 0,
+      "view": 0,
+      "publishTime": 1647333795387,
+      "id": 10
+    },
+    {
+      "title": "西甲-本泽马2球1助攻 小熊破门 皇马3-0力夺4连胜",
+      "categoryId": "5",
+      "content": "<p></p>\n<img src=\"https://n.sinaimg.cn/sports/transform/283/w650h433/20220315/68a9-8c619d998815edd2ea8d861fe30ffa47.webp\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">北京时间3月15日04:00(西班牙当地时间14日21:00)，2021/22赛季西甲第28轮一场焦点战展开争夺，皇家马德里客场3比0完胜马洛卡，本泽马2球1助攻，威尼修斯破门。皇马联赛4连胜后继续领跑。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　皇马近11次联赛对阵马洛卡仅负1场，其余10战9胜1平。双方联赛交锋59场，皇马38胜11平10负，其中客场16胜8平6负。罗德里戈、卢卡斯、门迪和卡塞米罗轮换出场。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　威尼修斯传球，本泽马突入禁区左侧小角度射门被扑出。随后又是威尼修斯脚后跟传球，门迪左路禁区边缘抽射近角仍被扑出。</span>&nbsp;</p>\n<img src=\"https://f.sinaimg.cn/sports/transform/684/w476h208/20220315/5002-2b43992e9d10cf47e2b20cb355df76e0.gif\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:center;\"><span style=\"color: rgb(77,79,83);font-size: 16px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\"><strong>本泽马和门迪射门均被扑出</strong></span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　皇马第55分钟打破僵局，巴尔韦德前场抢断，本泽马传球，威尼修斯小禁区前推射入网。第77分钟，奥利万禁区内对威尼修斯犯规，本泽马主罚点球命中，2-0。第82分钟，马塞洛左路战术角球传中，本泽马小禁区前头球破门，3-0。</span>&nbsp;</p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　皇马(4-3-3)：1-库尔图瓦；17-卢卡斯(70',2-卡瓦哈尔)，6-纳乔，4-阿拉巴，23-门迪(80',12-马塞洛)；15-巴尔韦德(60',10-摩德里奇)，14-卡塞米罗(61',25-卡马温加)，8-克罗斯；21-罗德里戈(71',11-阿森西奥)，9-本泽马，20-威尼修斯</span><br>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647333785591,
+      "star": 0,
+      "view": 0,
+      "publishTime": 1647333798786,
+      "id": 11
+    },
+    {
+      "title": "WTT新加坡赛马龙绝地反扑 3比2逆转王楚钦挺进8强",
+      "categoryId": "5",
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">北京时间3月15日消息，2022年WTT新加坡大满贯赛继续进行，马龙闯入男单八强。在与王楚钦的德比战里，马龙一度以1比2落后，他之后发力连赢两局以3比2逆转获胜晋级。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　马龙和王楚钦在第三轮上演德比战。首局两人几次战平，马龙在10平后把握机会连得两分以12比10先胜一局。第二局王楚钦积极上手抢攻，他迅速拉开比分领跑，以11比6扳回一局。第三局王楚钦又是早早领先，马龙紧追不舍，在8比6领先后王楚钦连得2分拿到局点。马龙连救两个局点，王楚钦沉着应对还击1分以11比8拿下，他以2比1反超。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　没有退路的马龙在第四局加强进攻，他迅速拉开领跑，以11比5拿下，总比分变为2平。决胜局马龙乘胜追击，很快以4比2领先。王楚钦尝试追分，马龙迅速还击，在6比3后连得3分扩大优势。王楚钦虽挽救几个赛点，但马龙没有反败为胜的机会，他以11比6赢下决胜局，以3比2淘汰王楚钦晋级。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", 微软雅黑, SimSun, 宋体, Arial;\">　　（Chimera）</span>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 0,
+      "publishState": 0,
+      "createTime": 1647333907210,
+      "star": 0,
+      "view": 0,
+      "publishTime": 0,
+      "id": 12
+    },
+    {
+      "title": "邓伦偷逃税被追缴并罚款1.06亿元",
+      "categoryId": "6",
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(14,14,14);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">据新华社，邓伦偷逃税被追缴并罚款1.06亿元。天眼查App显示，邓伦名下有2家公司，分别为邓伦（上海）影视文化工作室和舟山邓伦影视文化工作室，2家工作室均为邓伦个人独资企业，分别成立于2016年和2018年。</span></p>\n<p style=\"margin-left:0px;\"></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(14,14,14);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">此外，邓伦还和发小们共同创立了火锅品牌“火社火锅”。天眼查App显示，河北火社餐饮管理有限公司成立于2020年1月，法定代表人及执行董事、经理均为郭家熙。不久，该公司投资成立成都火社餐饮管理有限公司。随后，成都火社公司又投资成立重庆社火、上海社火、青岛火社、上海火舍几家公司。2021年9月，同样由郭家熙担任法定代表人的北京火舍餐饮管理有限公司成立。值得一提的，上述火社火锅关联公司和邓伦并无直接关联。</span>&nbsp;</p>\n",
+      "region": "全国",
+      "author": "Rain",
+      "roleId": 1,
+      "auditState": 1,
+      "publishState": 0,
+      "createTime": 1647333973507,
+      "star": 0,
+      "view": 0,
+      "publishTime": 0,
+      "id": 13
+    },
+    {
+      "title": "严打演艺圈偷逃税！",
+      "categoryId": "1",
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">新华社上海3月15日电（记者王雨萧、桑彤）记者15日了解到，近期，根据税收监管中的线索，上海市税务局第四稽查局依法对演员邓伦开展税务检查。经查，邓伦在2019年至2020年期间，通过虚构业务转换收入性质进行虚假申报，偷逃个人所得税4765.82万元，其他少缴个人所得税1399.32万元。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">据介绍，在税务检查过程中，邓伦能够积极配合检查并主动补缴税款4455.03万元，同时主动报告税务机关尚未掌握的涉税违法行为。综合考虑上述情况，上海市税务局第四稽查局依据相关法律法规规定，按照上海市税务行政处罚裁量基准，对邓伦追缴税款、加收滞纳金并处罚款，共计1.06亿元。其中，对其虚构业务转换收入性质虚假申报偷税但主动自查补缴的4455.03万元，处0.5倍罚款计2227.52万元；对其虚构业务转换收入性质虚假申报偷税但未主动自查补缴的310.79万元，处4倍罚款计1243.16万元。日前，上海市税务局第四稽查局已依法向邓伦送达税务行政处理处罚决定书。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">上海市税务局第四稽查局有关负责人表示，税务部门将持续加强对文娱领域从业人员的税收监管，并对协助偷逃税款的相关经纪公司及经纪人、中介机构等进行联动检查，依法严肃查处涉税违法行为，不断提升文娱领域从业人员及企业的税法遵从度，进一步营造法治公平的税收环境。（完）</span>&nbsp;</p>\n",
+      "region": "香港",
+      "author": "张三",
+      "roleId": 2,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647334368256,
+      "star": 0,
+      "view": 1,
+      "publishTime": 1647334390619,
+      "id": 14
+    },
+    {
+      "title": "巩汉林和冯潇霆这轮battle，你站谁？",
+      "categoryId": "1",
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">钱江晚报·小时新闻记者 汪佳佳</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">巩汉林和冯潇霆battle起来了！</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">看到这样的组合是不是感觉次元壁破了？</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">事情是这样的。近日，身为全国政协委员的著名喜剧表演艺术家巩汉林在接受采访时，批评了文体圈的一些不健康现象。他直指有些明星艺人，“收入几千万上亿，却还在偷税漏税”。谈到足球圈，他表示：“某足球队，年收入三百万、五百万甚至上千万了，球场上没有看到他们进球，完全给中国人丢脸……”</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">此言一出，获得很多网友的叫好，大家纷纷表示自己苦国足久矣。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">3月11日，前中国男足队长冯潇霆回复网友评论时，表示：“退（役）了，让给巩汉林。”</span>&nbsp;</p>\n<img src=\"https://n.sinaimg.cn/sinakd20114/142/w640h302/20220315/037d-d60b66e3737a6f98f8b7ff67686bd5a7.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">然而这句话却将他自己推向舆论漩涡。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">3月14日，巩汉林在抖音发布短视频，回应了网上称其“不懂球还评价”的质疑，表示“我是不懂足球，但是我会看比分”，“我这演小品的怎么就丢脸了”。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">14日深夜，冯潇霆在微博发布长文写道：“中国足球要提升需要的是实干家，而不是键盘侠”，还诉苦称：“你只要一个微小的失误，就会被外界无限放大……可比这更可怕的是，很多球员心寒了。”</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">这一波你站谁呢？</span>&nbsp;</p>\n<img src=\"https://n.sinaimg.cn/sinakd20114/267/w640h427/20220315/a7eb-e5bd8659a7e2a3c9df5ebf297823537d.jpg\" alt=\"undefined\" style=\"height: auto;width: auto\"/>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">以下为冯潇霆原文：</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">我不是来回应巩汉林老师的，我只想在此刻说说自己的心里话。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">先分享个小故事。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">在2018俄罗斯世界杯，有一场经典的比赛，是日本队以2-0的优势领先比利时队，被对手在6分钟连扳两球，伤停补时时。在获有角球球权的情况下，被比利时队反杀。整个过程仅仅用了14秒。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">为了探寻这14秒背后的秘密，日本人对28台摄像机所采集的14秒的视频进行了分析，并且邀请了当时这场比赛双方的主要球员，以及欧洲各个俱乐部的专家和选手一起来回顾和探讨。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">当事人和对手一起坐下来，客观冷静地分析探讨，哪些是技战术的问题，哪些是心态问题，哪些是判断失误，哪些是可以避免的，当时是否有更好的选择，进行了全方位的复盘和重演计算。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">每一个成功的背后，都有它付诸的时间成本，和投入成本。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">这些年，我们也遇到过类似情况，黑色3分钟，打平出线，不同的球员却总在犯相同的错误。然而我们只关心胜负，却不知道为什么输。然后网上一片呼声，谁谁下课。某某球员，滚出足球圈。很大可能这些人中，都不知道球员谁是谁。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">三年前的亚洲杯，我出现了失误，再也无缘国家队，我承担了所有，对于外界的批评和指责我没有怨言，可除了个人失误外，难道没有别的原因了吗？可最后，球员，教练只是在无限承担自己所能承担的责任。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">今年，国家队输给了越南，一点不意外，（我在平台分享了其中的原因）比赛输了，很不幸，又有球员出来承担责任了。又是某个球员的问题吗？我们一直在循环着。学法国，学意大利，学荷兰，最后却丢了自己。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">我们都在观望着，如果时机成熟，以最小的风险去谏言，以最少的损失换取最大的结果和流量。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">可现在足球已经到底了，你曾经甚至看过一个不知真假的保洁阿姨来揭露球员的私生活换流量，我还要保持沉默吗？</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">这次12强赛，没有打出理想的结果，可哪个球员不想荣归故里，可差距就是如此，而且我们还有入籍球员呢。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">这次有几场比赛，我们总是在回传，是技术原因，还是心理原因？每次比赛完，大伙都基本有一些业务交流，其中听说有一场比赛是过于自信，就和4年前的12赛其中一场一样！我们总是在原地打转，却没有真正的解决问题。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">现在的比赛氛围，有句话很流行，只要不失误就行。为什么会到这个地步？？你只要一个微小的失误，就会被外界无限放大，有多少人拿着一个动图就把球员骂得狗血喷头。多么可悲啊，可比这更可怕的是，很多球员心寒了。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">足协给球员拉的赞助商，帮助拍宣传的视屏，莫名就变成了海参哥。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">又有多少人能记得他们曾经为了争抢一个球，鼻梁骨断了，肋骨断了，膝盖碎了。又有谁记得韩国的那场比赛，我们被韩国队员欺负，身为队长必须冲在最前面的我。批评和指责很容易，认识自己很难，中国足球要提升需要的是实干家，而不是键盘侠。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">这几年，中超成绩不好，先后降薪+限薪。现在大部分球队都拖欠工资平均1年以上。换做任何一个人，老板告诉你我一年不能给你发工资，你愿意继续干吗？但大部分球员和俱乐部都相互理解和信任，共度难关，为了热爱，为了情怀，也为了工作。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">可还是有一些俱乐部，做着肮脏的事，外援的钱结了，中国球员你就等着吧，把原合同撕了，逼你签一份打工合……这些球员找谁说，谁会替他们说话？</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">网上的出现奇怪的现象，只要标题跟国足负面消息相关，一定会碾压性的获得大的流量。不停地带节奏，不住的诋毁。是，流量是获得了，可是没有人愿意思考这其中真正的原因。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">我原本没有必要去说一些问题，我已经不在国足了，可我就是和自己过不去，我怕现在不说，以后就说不出来了。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">我设想10年后的自己和现在的我对话，冯潇霆，你是不是傻。你看你说的这些，他不会改变，足球不会从新开始，大家不会一起努力营造好的氛围，不会很有耐心的慢慢积累等到花开。你看你后悔了吧。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">我很难说出我后不后悔，但我在做属于我的事。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">足球是一个青春饭。从小就要努力去磨练，然后用身体赚钱，等年纪大了，再花钱养身体，多少球员也因为伤病告别了自己热爱的赛场。其实选择足球本来就是一场赌博。赌运气，赌未来，赌能改变人生。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">我确实快退了，很多事跟我牵扯不大，可现在00后、05后这帮踢球的少年，他们付出了10年，20年的努力，日复一日的努力和磨练，他们的未来又在哪里？难道就躺平吗？</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">我经历了足球高光辉煌的时候，我们赢了两次亚冠冠军，拿了很多联赛冠军，国家队比赛两次赢了韩国，在12强赛也打出了水平。这些东西我们没有天天拿出去说，现在我们到了低谷，也没有抱怨太多，每天都坚持做自己热爱的事情。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">至于薪水，好的时候拿的多，不好的时候拿的少。这是市场规律，我们做不了主，可我们愿意在低谷时储备力量，再一次等待高光时刻。我应该是等不到了，但他们能等到。</span>&nbsp;</p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">这个世界上，没有真正的感同身受，我们所能做的只有在自己选择的道路上，不放弃。我爱这一行，我爱足球。但凡听到有人对我从事的行业指指点点，我都会不舒服，哪怕是朋友也不行。你可以说我，但你说我球队，说我行业，说我家人就是不行。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">我尊重每个行业，其实不只是运动员辛苦。各行各业都不容易，有的是可以看到，有的是藏在背后的心酸。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">我很久没用微博了，除了训练，比赛，闲时我会在小红书和b站，分享一些踢球的心得，知识，技巧，我很用心的去经营，喜欢足球的人可以去看一下，会对你有帮助。</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">最后，我希望，中国足球能够好起来。足球运动员，足球前辈，足球媒体人以及各个媒体平台，我们都是中国足球的一份子，大家的共同目标都是希望中国足球更好，那我们为什么不可以从更好的角度，去报道和挖掘故事，用更敏锐的正能量去探索和思考我们的足球呢？</span></p>\n<p style=\"text-align:start;\">&nbsp;<span style=\"color: rgb(77,79,83);background-color: rgb(255,255,255);font-size: 18px;font-family: Hiragino Sans GB\", \"Microsoft Yahei\", \"\\\\5FAE软雅黑\", SimSun, \"\\\\5B8B体\", Arial;\">如果足球人都没有信心了，那中国足球就真的没有什么好期待的了。</span>&nbsp;</p>\n",
+      "region": "北京",
+      "author": "张三分",
+      "roleId": 4,
+      "auditState": 3,
+      "publishState": 0,
+      "createTime": 1647334629546,
+      "star": 0,
+      "view": 0,
+      "publishTime": 0,
+      "id": 15
+    },
+    {
+      "title": "闲鱼被曝暗藏情色交易",
+      "categoryId": "1",
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">极目新闻首席记者 刘楒睿</span></p>\n<p style=\"margin-left:0px;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">3月14日，有媒体发布新闻称，闲鱼二手交易平台内充斥着情色交易。15日，极目新闻记者查询时发现相关商品已被下架。官方表示，平台一向拒绝违规商品发布，希望广大用户在发现后第一时间点击举报，官方会及时处理。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">14日，都市现场发布新闻称，在闲鱼二手交易平台，通过搜索“陪”“陪丸”“内衣”“丝袜”等关键词，检索出色情陪聊、原味内衣等情色交易，甚至还有线下的上门色情服务。</span></p>\n<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">消息一出，网友纷纷表示难以置信。有网友表示，希望官方和警方对相关乱象严查严办。</span></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(51,51,51);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">15日，极目新闻记者以相同路径查询，发现目前相关商品已被下架。闲鱼官方客服告诉极目新闻记者，平台一向拒绝违规商品的发布，并且一直致力于打击色情等违规商品。2019年，闲鱼曾发布《闲鱼社区信息发布规范》，其中便明确提到禁止发布色情、低俗、催情用品等商品。</span></p>\n<p style=\"margin-left:0px;\"></p>\n<p style=\"text-align:start;\"><br>&nbsp;&nbsp;</p>\n",
+      "region": "北京",
+      "author": "张三分",
+      "roleId": 4,
+      "auditState": 2,
+      "publishState": 2,
+      "createTime": 1647339249238,
+      "star": 0,
+      "view": 1,
+      "publishTime": 1647345721851,
+      "id": 16
+    },
+    {
+      "title": "沪指一度跌近4% 失守3100点 创年内新低",
+      "categoryId": "2",
+      "content": "<p style=\"text-align:start;\"></p>\n<p style=\"margin-left:0px;\"><span style=\"color: rgb(14,14,14);background-color: rgb(255,255,255);font-size: 16px;font-family: arial;\">沪指盘中继续走低，跌破3100点关口，日内跌幅近3.8%。创业板指跌近1.7%，深成指跌近3.2%。</span></p>\n<p style=\"margin-left:0px;\"></p>\n<p style=\"text-align:start;\"><br>&nbsp;</p>\n",
+      "region": "西安",
+      "author": "咕噜墩子",
+      "roleId": 3,
+      "auditState": 0,
+      "publishState": 0,
+      "createTime": 1647339344085,
+      "star": 0,
+      "view": 0,
+      "publishTime": 0,
+      "id": 17
+    },
+    {
+      "title": "记者卧底7-11曝光后厨乱象 现在的7-11完全变样了",
+      "categoryId": "6",
+      "content": "<p style=\"text-align:start;\"><span style=\"color: rgb(64,64,64);font-size: 18px;font-family: Microsoft YaHei\", 微软雅黑;\">#记者卧底7-11曝光后厨乱象#据北京广播电视台生活频道《生活这一刻》微博3月15日消息，记者卧底全国连锁门店超七千家的零售巨头(7-Eleven)7-11便利店关东煮北京亮马桥店发现，你最喜欢的便利店关东煮，装海带的篮子可能是刚刚从垃圾桶上拿下来的；一次性杯盖的旁边竟然是“蟑螂贴”；热饮上架超过13天属于超期食品，店员一边说“这不打脸嘛”，一边更换了标签；备受上班族喜爱的便利店盒饭是用这样的食盒盛装的。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(64,64,64);font-size: 18px;font-family: Microsoft YaHei\", 微软雅黑;\">　　该消息冲热热搜，引发网友热议。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(64,64,64);font-size: 18px;font-family: Microsoft YaHei\", 微软雅黑;\">　　在新浪微博上，有网友在评论区表示：“7-Eleven便利店关东煮刚来北京那会，我在东直门总店打过工，那会所有门店都是公司直营，我印象最深的是新做的关东煮里有根头发，我们会全部倒掉从新煮，从来没有过期的食物，有专门的厨师来做饭，所有食物都安全新鲜。后来7-Eleven遍地开花，再去的时候全变样了，门店又脏又乱，我还纳闷呢，后来知道改承包制了。”</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(64,64,64);font-size: 18px;font-family: Microsoft YaHei\", 微软雅黑;\">　　据澎湃新闻1月7消息，日本新闻网站“J-CAST”6日报道，有内部员工指认，日本零售业巨头“7-ELEVEn”(7-11)在日本的店铺存在使用过期近1个月食材的情况。就此事，日本“7-11”企业方面承认上述情况系事实，称将“严正处理此事”，并于6日晚间在官方网站上发布了道歉声明。</span></p>\n<p style=\"text-align:start;\"><span style=\"color: rgb(64,64,64);font-size: 18px;font-family: Microsoft YaHei\", 微软雅黑;\">　　公开资料显示，7-ELEVEn诞生于美国，在日本得到发展壮大，在中国开展有地域性的商品开发为顾客提供“近且便利”的服务。柒一拾壹(中国)投资有限公司拥有在中国开展7-ELEVEn事业的特许经营许可权，在中国的各省市招募参加7-ELEVEn事业的地区特许加盟。</span>&nbsp;</p>\n",
+      "region": "西安",
+      "author": "咕噜墩子",
+      "roleId": 3,
+      "auditState": 2,
+      "publishState": 1,
+      "createTime": 1647339430771,
+      "star": 0,
+      "view": 0,
+      "publishTime": 0,
+      "id": 18
+    }
+  ]
+}
